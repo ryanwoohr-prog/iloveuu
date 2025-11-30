@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>For My Baby ❤️</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#f472b6', // Pink-400
+                        'secondary': '#f9a8d4', // Pink-300
+                        'background-soft': '#fff1f2', // Pink-50
+                        'text-dark': '#831843', // Pink-900
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        // Use a loving/serif font for the main text
+                        serif: ['Vollkorn', 'serif'],
+                    },
+                    keyframes: {
+                        // Custom keyframe for the pulsing album art
+                        pulse_fade: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                            '50%': { transform: 'scale(1.05)', opacity: '0.8' },
+                        }
+                    },
+                    animation: {
+                        // Custom animation utility
+                        pulse_fade_slow: 'pulse_fade 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* Custom styles for the scrollbar to match the theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #f9a8d4; /* secondary pink */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #fce7f3; /* light background */
+        }
+    </style>
+</head>
+<body class="bg-background-soft text-text-dark min-h-screen font-sans">
+
+    
+    <div id="password-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-primary/95 backdrop-blur-sm transition-opacity duration-500">
+        <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl max-w-sm w-11/12 text-center transform transition-all duration-300 scale-100 hover:scale-[1.02]">
+            
+            <!-- Kept only the requested title and made it larger -->
+            <h1 class="text-4xl sm:text-5xl font-extrabold mt-2 mb-8 text-primary">Guess the password 😛</h1>
+            
+            <input type="password" id="password-input" placeholder="••••" 
+                   class="w-full p-3 mb-6 text-center text-xl tracking-widest border-2 border-secondary focus:border-primary focus:ring-primary rounded-xl outline-none transition duration-200"
+                   maxlength="10" 
+                   onkeyup="if(event.key === 'Enter') checkPassword()">
+
+            <button onclick="checkPassword()" 
+                    class="w-full py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-pink-600 transition duration-300 transform hover:scale-[1.01] active:scale-95">
+                Enter
+            </button>
+
+            <!-- Removed the error message text block -->
+        </div>
+    </div>
+
+    
+    <div id="main-content" class="hidden container mx-auto p-4 sm:p-8 transition-opacity duration-1000">
+        
+        
+        <header class="text-center py-6 sm:py-10">
+            <!-- This title is static -->
+            <h1 class="text-4xl sm:text-6xl font-serif font-bold text-primary tracking-wide">
+                For My Baby ❤️
+            </h1>
+            <p class="text-xl sm:text-2xl mt-2 text-text-dark/80">😁😁</p>
+        </header>
+
+        
+        <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-12">
+            
+            
+            <section id="letter-section" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl transition duration-300 hover:shadow-2xl border-t-8 border-secondary">
+                
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-0 flex items-center text-primary leading-none">
+                    <span class="mr-3 text-4xl">💌</span></h2>
+                <div class="font-serif text-lg leading-relaxed text-text-dark/90 whitespace-pre-line">
+                    <p class="-mt-8">
+                        hiii baby, i love uu so muchhhhh 😭😭 if i ever make u angry, just so yk i rlly didnt mean it. I want u to be happyyy. U are the kindest, prettiest, cutest, perfectest girl everrrrrr❤️ I hope u stop scolding me 😔 but its fine ur cute either way i still love u. And rmb ur always the first in my heart no matter what😛. Ok anyways i love uu so just be urself and be a happy and joyful girl like u shud be 😁🥰. Im sorry that i cant be what u expect me to be, like staying up late at night to be with u or other stuff lah, im rlly doing my bestt so i hope u dun overthink and hate me 🥺. Anyways have a good day, love uuuu ❤️❤️❤️❤️
+                    </p>
+                </div>
+            </section>
+            
+        </div>
+        
+        
+        <section id="gallery-section" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border-t-8 border-secondary">
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+                
+                <!-- Gallery Item 1 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03]">
+                    <img src="https://img.sanishtech.com/u/d2763644afbd1321fdb5a23ecc51f9a2.jpg" 
+                         alt="Precious Couple Photo" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">us</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03]">
+                    <img src="https://img.sanishtech.com/u/351ecdb7cb858e11c429525e7e408e93.jpg" 
+                         alt="Cherished Memory 2" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">us</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03]">
+                    <img src="https://img.sanishtech.com/u/924e3b8776f1a82915b6db4ba61efc8f.jpg" 
+                         alt="Cherished Memory 3" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">us</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03]">
+                    <img src="https://img.sanishtech.com/u/401cb6599e765b5a5f3278c73b7546ec.jpg" 
+                         alt="Cherished Memory 4" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">us</span>
+                    </div>
+                </div>
+
+                 <!-- Gallery Item 5 (Placeholder) - Unmodified -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03] hidden sm:block">
+                    <img src="https://placehold.co/400x400/93c5fd/831843?text=Memory+5" 
+                         alt="Cherished Memory 5" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">The Best Day</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 (Placeholder) - Unmodified -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.03] hidden md:block">
+                    <img src="https://placehold.co/400x400/a7f3d0/831843?text=Memory+6" 
+                         alt="Cherished Memory 6" 
+                         class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                        <span class="text-white font-bold text-lg drop-shadow-lg">Just Us</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </section>
+
+
+        
+        <footer class="text-center py-8 mt-10 text-text-dark/50 text-sm">
+            
+        </footer>
+    </div>
+
+    
+    <script>
+        // *** PASSWORD LOGIC ***
+        const CORRECT_PASSWORD = "220624"; 
+        
+        const overlay = document.getElementById('password-overlay');
+        const mainContent = document.getElementById('main-content');
+        const passwordInput = document.getElementById('password-input');
+        // Removed reference to errorMessage as the element was removed
+
+        function checkPassword() {
+            const input = passwordInput.value.trim();
+            if (input === CORRECT_PASSWORD) {
+                
+                // 💖 CONFETTI EFFECT 💖
+                confetti({
+                    particleCount: 150,
+                    spread: 90,
+                    origin: { y: 0.6 }
+                });
+
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    mainContent.classList.remove('hidden');
+                    setTimeout(() => {
+                         mainContent.style.opacity = '1';
+                    }, 50);
+                }, 500);
+            } else {
+                // Now only uses the shake animation to indicate incorrect password
+                passwordInput.classList.add('animate-shake');
+                setTimeout(() => {
+                    passwordInput.classList.remove('animate-shake');
+                    passwordInput.value = '';
+                }, 1000); 
+            }
+        }
+        
+        // Add a simple CSS keyframe animation for the shake effect
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            @keyframes shake {
+                0%, 100% {transform: translateX(0);}
+                10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+                20%, 40%, 60%, 80% {transform: translateX(5px);}
+            }
+            .animate-shake {
+                animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+            }
+        `;
+        document.head.appendChild(styleSheet);
+        
+    </script>
+</body>
+</html>
+
+
